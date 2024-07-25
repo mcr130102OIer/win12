@@ -15,7 +15,7 @@
     <div id="confirmContainer">
         <div id="exit_confirm">
             <div id="confirm" data-show="false">
-                <p id="confirm-tit"> Save configuration changes and exit now? </p>
+                <p id="confirm-tit"> 保存配置更改并立即退出？ </p>
                 <div class="btns" style="display: flex;justify-content: space-around;">
                     <a class="confirm-button" id="ok-btn" style="background-color: #000;color: #fff;" click="" ontouchstart="">[OK]</a>
                     <a class="confirm-button" style="color: #000;background-color: #fff;" ontouchstart="$('#confirmContainer').css('display', 'none');$('#confirm').attr('data-show', 'false');" click="$('#confirmContainer').css('display', 'none');$('#confirm').attr('data-show', 'false');" id="cancel-btn">[Cancel]</a>
@@ -28,7 +28,7 @@
 
     <head>
         <nav>
-            <p class="tit">BIOS Setup Utility</p>
+            <p class="tit">Mcr130102 BIOS</p>
         </nav>
         <nav class="pages" style="padding-left: 15px;">
             <a class="tab tab0" id="main" click="tab = 0; changePage(0)" ontouchstart="changePage(0)">Main</a>
@@ -45,9 +45,9 @@
     </div>
     <div id="exitPage" class="page page1">
         <div class="container">
-            <div click="BIOS_confirm(' Save configuration changes and exit now? ','toBoot()')" ontouchstart="BIOS_confirm(' Save configuration changes and exit now? ','toBoot()')" class="exit" id="e1">Exit Saving Changes</div>
-            <div click="BIOS_confirm(' Discard changes and exit setup? ','toBoot()');" ontouchstart="BIOS_confirm(' Discard changes and exit setup? ','toBoot()');" class="exit" id="e2">Exit Discarding Changes</div>
-            <div click="BIOS_confirm('  Restore default setup?  ','$(`#confirmContainer`).css(`display`, `none`);$(`#confirm`).attr(`data-show`, `false`);');" ontouchstart="BIOS_confirm('  Restore default setup?  ','$(`#confirmContainer`).css(`display`, none); $(`#confirm`).attr(`data-show`, `false`);');" class="exit" id="e3">Restore Defaults</div>
+            <div click="BIOS_confirm(' 是否现在保存所有更改后离开？ ','toBoot()')" ontouchstart="BIOS_confirm(' Save configuration changes and exit now? ','toBoot()')" class="exit" id="e1">Exit Saving Changes</div>
+            <div click="BIOS_confirm(' 放弃更改并退出设置？ ','toBoot()');" ontouchstart="BIOS_confirm(' Discard changes and exit setup? ','toBoot()');" class="exit" id="e2">Exit Discarding Changes</div>
+            <div click="BIOS_confirm(' 恢复默认设置？  ','$(`#confirmContainer`).css(`display`, `none`);$(`#confirm`).attr(`data-show`, `false`);');" ontouchstart="BIOS_confirm('  Restore default setup?  ','$(`#confirmContainer`).css(`display`, none); $(`#confirm`).attr(`data-show`, `false`);');" class="exit" id="e3">Restore Defaults</div>
         </div>
     </div>
     <script src="./scripts/jq.min.js"></script>
