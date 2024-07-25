@@ -1,23 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
-
-<!-------- 禁止格式化本文档！-------->
-
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="format-detection" content="telephone=no" />
-
-	<!-- Windows 12 网页版 谭景元原创  -->
-
-	<!-- Windows 12 网页版是一个开放源项目,
-	希望让用户在网络上预先体验 Windows 12,
-	内容可能与 Windows 12 正式版本不一致。
-	使用标准网络技术，例如 HTML、CSS 和 JavaScript，
-	此项目绝不附属于微软，且不应与微软操作系统或产品混淆，
-	这也不是 Windows365 cloud PC
-	本项目中微软、Windows 和其他示范产品是微软公司的商标 -->
 	<link rel="stylesheet" href="./desktop.css">
 	<link rel="stylesheet" href="bootstrap-icons.css">
 	<!-- Apps style -->
@@ -151,11 +138,11 @@ toggletheme() 切换主题
 		<div class="name">Administrator</div>
 		<div id="login" onclick="
 			this.id = 'login-after';
-			this.innerText = '登录中...';
+			this.innerText ='初始化中...';
 			document.querySelector('#loginback').removeChild(document.querySelector('#loginback .power'));
 			var qwq = window.setInterval(() => {
 				if (this.innerText.match(/\.\.\./)) {
-					this.innerText = '登录中.';
+					this.innerText = '初始化中.';
 				}
 				else {
 					this.innerText += '.';
@@ -179,7 +166,7 @@ toggletheme() 切换主题
 			}, 1000);
 			this.onclick = null;
 		">
-			登录
+			打开win12网页虚拟机
 		</div>
 		<a class="power" onclick="$(this).addClass('show')">
 			<i class="bi bi-power" onclick="setTimeout(() => {window.location='shutdown.html';}, 200);" win12_title="关机"></i>
@@ -322,9 +309,9 @@ toggletheme() 切换主题
 					<img src="icon/run.svg">
 					<p>运行</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['about', '关于Win12网页版'])" onclick="openapp('about');hide_startmenu();">
+				<a oncontextmenu="return showcm(event, 'smlapp', ['about', '关于Win12网页虚拟机'])" onclick="openapp('about');hide_startmenu();">
 					<img src="icon/about.svg">
-					<p>关于Win12网页版</p>
+					<p>关于Win12网页虚拟机</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['taskmgr', '任务管理器'])" onclick="openapp('taskmgr');hide_startmenu();">
 					<img src="icon/taskmgr.png">
@@ -336,7 +323,7 @@ toggletheme() 切换主题
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['edge', 'Microsoft Edge'])" onclick="openapp('edge');hide_startmenu();">
 					<img src="icon/edge.svg">
-					<p>Microsoft Edge</p>
+					<p>HTML Edge</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['camera', '相机'])" onclick="apps.camera.notice();hide_startmenu()">
 					<img src="icon/camera.svg">
@@ -369,15 +356,15 @@ toggletheme() 切换主题
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['vscode', 'Visual Studio Code'])" onclick="openapp('vscode');hide_startmenu();">
 					<img src="icon/vscode.png">
-					<p>Visual Studio Code</p>
+					<p>VSCode</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['wsa', '适用于 Android™️ 的 Windows 子系统'])" onclick="openapp('wsa');hide_startmenu();">
 					<img src="icon/wsa.png">
 					<p>适用于 Android™️ 的 Windows 子系统</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['windows12', 'Windows 12'])" onclick="openapp('windows12');hide_startmenu();">
+				<a oncontextmenu="return showcm(event, 'smlapp', ['windows12', 'Windows 12沙盒'])" onclick="openapp('windows12');hide_startmenu();">
 					<img src="icon/logo.svg">
-					<p>Windows 12</p>
+					<p>Windows 12沙盒</p>
 				</a>
 			</list>
 		</div>
@@ -406,7 +393,7 @@ toggletheme() 切换主题
 					<a class="a btn btn-icon power" win12_title="电源" onclick="$(this).addClass('show')">
 						<span class="bi bi-power"></span>
 						<i class="bi bi-power" onclick="$('#start-menu').removeClass('show');
-						setTimeout(() => {window.location='shutdown.html';},200);" win12_title="关机"></i>
+						setTimeout(() => {window.location='shutdown.html';},200);" win12_title="退出"></i>
 						<i class="bi bi-arrow-counterclockwise" onclick="$('#start-menu').removeClass('show');
 						setTimeout(() => {window.location='reload.html';},200);" win12_title="重启"></i>
 					</a>
@@ -471,11 +458,11 @@ toggletheme() 切换主题
 					</a>
 					<a class="a sm-app enable edge" onclick="openapp('edge');hide_startmenu();" oncontextmenu="return showcm(event,'smapp',['edge','Microsoft Edge'])">
 						<img src="icon/edge.svg">
-						<p>Microsoft Edge</p>
+						<p>HTML Edge</p>
 					</a>
 					<a class="a sm-app enable windows12" onclick="openapp('windows12');hide_startmenu();" oncontextmenu="return showcm(event,'smapp',['windows12','Windows 12'])">
 						<img src="icon/logo.svg">
-						<p>Windows 12</p>
+						<p>Windows 12沙盒</p>
 					</a>
 					<a class="a sm-app enable terminal" onclick="openapp('terminal');hide_startmenu();" oncontextmenu="return showcm(event,'smapp',['terminal','终端'])">
 						<img src="icon/terminal.svg">
@@ -492,11 +479,11 @@ toggletheme() 切换主题
 					</div>
 				</div>
 				<div class="apps">
-					<a class="a tj-obj act"><img src="icon/files/ppt.png"><div><p>科学地使用瓶盖.pptx</p><p>5 分钟前</p></div></a>
-					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>可口可乐瓶盖.jpg</p><p>7 分钟前</p></div></a>
-					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>瓶盖构造图.jpg</p><p>16 分钟前</p></div></a>
-					<a class="a tj-obj act"><img src="icon/files/word.png"><div><p>瓶盖的构造及作用.docx</p><p>24 分钟前</p></div></a>
-					<a class="a tj-obj act"><img src="icon/files/excel.png"><div><p>可口可乐瓶盖厚度.xlsx</p><p>35 分钟前</p></div></a>
+					<a class="a tj-obj act"><img src="icon/files/ppt.png"><div><p>win12网页虚拟机流程图.pptx</p><p>5 分钟前</p></div></a>
+					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>background.jpg</p><p>7 分钟前</p></div></a>
+					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>win12启动流程图.jpg</p><p>16 分钟前</p></div></a>
+					<a class="a tj-obj act"><img src="icon/files/word.png"><div><p>win12项目说明.docx</p><p>24 分钟前</p></div></a>
+					<a class="a tj-obj act"><img src="icon/files/excel.png"><div><p>win12员工打卡表.xlsx</p><p>35 分钟前</p></div></a>
 				</div>
 			</div>
 		</div>
@@ -529,7 +516,7 @@ toggletheme() 切换主题
 						$('#search-win').removeClass('show-begin');
 					}, 200);">
 						<img src="icon/about.svg">
-						<p>关于Win12网页版</p>
+						<p>关于Win12网页虚拟机</p>
 					</a>
 				</list>
 			</div>
@@ -700,64 +687,64 @@ toggletheme() 切换主题
 			</div>
 			<div class="content">
 				<div class="card" style="grid-column: 1/6;grid-row: 1/3;color: #fff;background: var(--bgul);background-position:0 -278px;background-size: 100%;">
-					<p class="tit" style="font-size: 20px;margin: 90px 0 0 30px;text-shadow: 0 0 8px #000;">Windows12 v7.0 发布</p>
+					<p class="tit" style="font-size: 20px;margin: 90px 0 0 30px;text-shadow: 0 0 8px #000;">Windows12 v7123213123.0 发布</p>
 					<a class="a" style="margin: 5px 0 0 50px;font-size: 17px;color: #9dd0fb;text-shadow: 0 0 3px #000;" onclick="hide_widgets();
 					openapp('about');if($('.window.about').hasClass('min'))minwin('about');
 					$('#win-about>.about').removeClass('show');$('#win-about>.update').addClass('show');
 					$('#win-about>.update>div>details:first-child').attr('open','open')">详细信息 ></a>
 				</div>
 				<div class="card"
-					style="grid-column: 4/6;grid-row: 7/9;background:url(img/win13.jpg) right;background-size: cover;">
+					style="grid-column: 4/6;grid-row: 7/9;background:url(/mcr130102OIer/win12/edit/main/img/win13.jpg) right;background-size: cover;">
 					<p class="tit" style="margin: 70px 0 0 10px;color: #fff;">Windows13 即将发布，官方透露: 将自带 Macos 子系统</p>
 					<a class="a"
 						style="margin: 5px 0 0 80px;font-size: 17px;color: #9dd0fb;text-shadow: 0 0 3px #000;">详细信息
 						></a>
 				</div>
 				<div class="card"
-					style="grid-column: 4/6;grid-row: 3/5;background:linear-gradient(#00000000,var(--bg) 70%),url(img/win11.jpg) center;background-size: cover;">
+					style="grid-column: 4/6;grid-row: 3/5;background:linear-gradient(#00000000,var(--bg) 70%),url(/mcr130102OIer/win12/edit/main/img/win11.jpg) center;background-size: cover;">
 					<p class="tit" style="margin: 100px 0 0 10px;">Windows11 将于下周停止支持</p>
 					<a class="a" style="margin: 5px 0 0 80px;font-size: 17px;">详细信息 ></a>
 				</div>
 				<div class="card"
-					style="grid-column: 1/3;grid-row: 5/7;background:linear-gradient(#00000000,#111 80%),url(img/corsiri.svg) bottom;background-size: 150%;">
+					style="grid-column: 1/3;grid-row: 5/7;background:linear-gradient(#00000000,#111 80%),url(/mcr130102OIer/win12/edit/main/img/corsiri.svg) bottom;background-size: 150%;">
 					<p class="tit" style="margin: 80px 0 0px 10px;color: #fff;">2029年,微软终重拾Cortana 微软员工透露:将与Siri整合</p>
 					<a class="a" style="margin: 0 0 0 80px;font-size: 17px;color: #9dd0fb;">详细信息 ></a>
 				</div>
 				<div class="card"
-					style="grid-column: 1/4;grid-row: 7/9;background:linear-gradient(#00000000,#111 90%),url(img/wsm.png) left;background-size: 120%;">
+					style="grid-column: 1/4;grid-row: 7/9;background:linear-gradient(#00000000,#111 90%),url(/mcr130102OIer/win12/edit/main/img/wsm.png) left;background-size: 120%;">
 					<p class="tit" style="margin: 100px 0 0px 10px;color: #fff;">微软发布 Windows Subsystem for MacOS</p>
 					<a class="a" style="margin: 0 0 0 170px;font-size: 17px;color: #9dd0fb;">详细信息 ></a>
 				</div>
-				<div class="card" style="grid-column: 3/6;grid-row: 5/7;background:linear-gradient(#00000000 0 30%,var(--bg) 70%),url(img/mc.jpg) bottom;background-size: cover;">
-					<p class="tit" style="margin: 100px 0 -20px 10px;">今日凌晨,Minecraft把代理权交给中国航天员谭景元,网易败下阵来了?</p>
+				<div class="card" style="grid-column: 3/6;grid-row: 5/7;background:linear-gradient(#00000000 0 30%,var(--bg) 70%),url(/mcr130102OIer/win12/edit/main/img/mc.jpg) bottom;background-size: cover;">
+					<p class="tit" style="margin: 100px 0 -20px 10px;">今日凌晨,网易告迷你玩，迷你玩面临倒闭</p>
 					<a class="a" style="margin: 0 0 0 170px;font-size: 17px;">详细信息 ></a>
 				</div>
-				<div class="card" style="grid-column: 1/4;grid-row: 3/5;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(img/yq.jpg) center;background-size: cover;">
-					<p class="tit" style="margin: 120px 0 -20px 10px;">中国航天员谭景元昨天下午成功登月</p>
+				<div class="card" style="grid-column: 1/4;grid-row: 3/5;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(/mcr130102OIer/win12/edit/main/img/yq.jpg) center;background-size: cover;">
+					<p class="tit" style="margin: 120px 0 -20px 10px;">中国航天员欧阳修昨天下午成功登月</p>
 					<a class="a" style="margin: 0 0 0 150px;font-size: 17px;">详细信息 ></a>
 				</div>
-				<div class="card" style="grid-column: 3/6;grid-row: 9/11;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(img/office.png) center;background-size: cover;">
+				<div class="card" style="grid-column: 3/6;grid-row: 9/11;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(/mcr130102OIer/win12/edit/main/img/office.png) center;background-size: cover;">
 					<p class="tit" style="margin: 100px 0 0 10px;">微软发布声控Office套件，用户可以用嗓子完成文件编辑</p>
 					<a class="a" style="margin: 0 0 0 160px;font-size: 17px;">详细信息 ></a>
 				</div>
 				<div class="card"
-					style="grid-column: 1/4;grid-row: 11/13;background:linear-gradient(#00000000,var(--bg) 70%),url(img/earth.webp) center;background-size: cover;">
+					style="grid-column: 1/4;grid-row: 11/13;background:linear-gradient(#00000000,var(--bg) 70%),url(/mcr130102OIer/win12/edit/main/img/earth.webp) center;background-size: cover;">
 					<p class="tit" style="margin: 100px 0 0 10px;">流浪地球4首支预告片发布</p>
 					<a class="a" style="margin: 5px 0 0 160px;font-size: 17px;">详细信息 ></a>
 				</div>
 				<div class="card" style="grid-column: 1/3;grid-row: 9/11;background:#171b22;">
 					<p class="tit" style="font-size: 19px;margin: 50px 0 0 10px;color: #fff;">想给新闻增加更多奇思妙想?
 						<br />快在github上来提交吧</p>
-					<a class="a" win12_title="https://github.com/tjy-gitnub/win12/issues"
+					<a class="a" win12_title="https://kkgithub.com/tjy-gitnub/win12/issues"
 						style="margin: 10px 0 0 70px;font-size: 17px;color: #9dd0fb" onclick="
-					window.open('https://github.com/tjy-gitnub/win12/issues','_blank');">提交issues ></a>
+					window.open('https://kkgithub.com/mcr130102oier/win12/issues','_blank');">提交issues ></a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="copilot">
 		<div class="titbar">
-			<p class="text">Windows 12 Copilot</p>
+			<p class="text">Mcr130102 Copilot</p>
 			<div class="alr">
 				<span class="btn about" onclick="shownotice('about-copilot')">
 					<i class="bi bi-info-circle"></i>
@@ -1012,11 +999,11 @@ toggletheme() 切换主题
 		</div>
 		<div class="b" ondblclick="openapp('about');" ontouchstart="openapp('about');" oncontextmenu="return showcm(event,'desktop.icon',['about',-1]);" appname="about">
 			<img src="icon/about.svg">
-			<p>关于 Win12 网页版</p>
+			<p>关于 Win12 网页虚拟机</p>
 		</div>
 		<div class="b" ondblclick="openapp('edge');" ontouchstart="openapp('edge');" oncontextmenu="return showcm(event,'desktop.icon',['edge',-1]);" appname="edge">
 			<img src="icon/edge.svg">
-			<p>Microsoft Edge</p>
+			<p>HTML Edge</p>
 		</div>
 		<div class="b" ondblclick="shownotice('feedback');" ontouchstart="shownotice('feedback');;">
 			<img src="icon/feedback.svg">
@@ -1053,7 +1040,7 @@ toggletheme() 切换主题
 		<div id="notice">
 			<div class="cnt">
 				<p class="tit">注意</p>
-				<p>你的电脑即将爆炸</p>
+				<p>你的虚拟机即将爆炸</p>
 			</div>
 			<div class="btns">
 				<a class="a btn main" onclick="closenotice()">确定</a>
@@ -1260,7 +1247,7 @@ toggletheme() 切换主题
 							<div class="applicant-line">
 								<div class="applicant-info">
 									<span>Https-Post</span>
-									<p>Post url :<strong>api.github.com/r......</strong></p>
+									<p>Post url :<strong>api.kkgithub.com/r......</strong></p>
 								</div>
 							</div>
 							<div class="applicant-line">
@@ -1476,14 +1463,14 @@ toggletheme() 切换主题
 						<p class="s-icon" style="font-size: 70px;margin: -8px 10px 0px 20px;"></p>
 						<div>
 							<p style="font-size: 28px;text-overflow: ellipsis;white-space: nowrap;">Desktop-PingGai</p>
-							<p style="color: #7f7f7f;margin:-8px 0 -5px 0;">瓶盖</p>
+							<p style="color: #7f7f7f;margin:-8px 0 -5px 0;">mcr130102</p>
 							<a style="color: var(--href);text-decoration: underline !important;;" class="a">重命名</a>
 						</div>
 					</div>
 					<div class="setting-card">
 						<p style="padding: 10px 15px 0px 15px;"><icon><img src="apps/icons/setting/ms.png" style="width: 35px; height: 35px;"></icon><br>所有功能尽在 Microsoft 账户<br><span style="font-size: 14px;color:var(--text2)">登录后，即可在设备上使用你最喜爱的 Microsoft 应用和服务。可以备份设备、让设备更安全，并使用 Microsoft 365 应用版和云储存空间。</span><br><img src="apps/icons/setting/ms365.png"></p>
 						<div style="padding:  3px 15px 15px 15px">
-							<a class="a button" onclick="window.location.href='./bluescreen.html?code=YOU_CAN_NOT_SIGN_IN_YOUR_MICROSOFT_ACCOUNT'" win12_title="BSOD is coming!">登录</a>
+							<a class="a button" onclick="window.location.href='/mcr130102OIer/win12/edit/main/bluescreen.html?code=YOU_CAN_NOT_SIGN_IN_YOUR_MICROSOFT_ACCOUNT'" win12_title="BSOD is coming!">登录</a>
 						</div>
 					</div>
 					<div class="setting-card">
@@ -1543,7 +1530,7 @@ toggletheme() 切换主题
 						<p class="s-icon" style="font-size: 70px;margin: -8px 10px 0px 20px;"></p>
 						<div>
 							<p style="color: #7f7f7f;margin:-8px 0 -5px 0;">我的蓝牙名称</p>
-							<p style="font-size: 28px;text-overflow: ellipsis;white-space: nowrap;">Blueteeth-PingGai</p>
+							<p style="font-size: 28px;text-overflow: ellipsis;white-space: nowrap;">mcr130102的电脑</p>
 							<p class="blueteeth-tips-text" style="color: #7f7f7f;margin:-8px 0 -5px 0;">这是您在其他设备的蓝牙列表中的名称</p>
 							<a style="color: var(--href);text-decoration: underline !important;;" class="a">重命名</a>
 						</div>
@@ -1618,7 +1605,7 @@ toggletheme() 切换主题
 							</div>
 						</div>
 						<a class="dp theme" onclick="$('.dp.theme').toggleClass('show');if (!($('#set-theme>.a').length)) apps.setting.theme_get();">
-							<icon>&#xE771;</icon><div><p>主题</p><p>设置 Windows 的主题 想要<span class="a jump" win12_title="https://github.com/tjy-gitnub/win12-theme" onclick="window.open('https://github.com/tjy-gitnub/win12-theme','_blank')">上传自己的主题</span>?</p></div><i class="bi bi-chevron-down"></i></a>
+							<icon>&#xE771;</icon><div><p>主题</p><p>设置 Windows 的主题 想要<span class="a jump" win12_title="https://kkgithub.com/tjy-gitnub/win12-theme" onclick="window.open('https://kkgithub.com/tjy-gitnub/win12-theme','_blank')">上传自己的主题</span>?</p></div><i class="bi bi-chevron-down"></i></a>
 						<div class="dp theme" id="set-theme">
 							<loading>
 								<svg width="30px" height="30px" viewBox="0 0 16 16">
@@ -1686,8 +1673,8 @@ toggletheme() 切换主题
 						<a class="a user" style="display:flex">
 							<svg viewBox="0,0,257,344" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100px;height: 100px;background-color: var(--hover-b);/* box-shadow: 0 0 10px var(--sd); */width: 60px;width: 60px;height: 60px;border-radius: 50%;padding: 11px;margin-right: 15px;margin-bottom: 15px;" overflow="hidden"><defs><clipPath id="user-clip1"><rect x="382" y="195" width="257" height="344" /></clipPath><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill3"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill4"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient></defs><g clip-path="url(#user-clip1)" transform="translate(-382 -195)"><path d="M637.755 433.872C642.215 515.221 579.577 537.983 508.011 537.983 436.444 537.983 376.676 507.833 383.513 437.11 383.109 425.234 389.59 414.133 398.634 409.891 413.82 402.768 444.753 402.936 507.484 402.997 570.214 403.058 609.164 402.279 621.521 407.947 633.878 413.614 638.011 424.609 637.755 433.872Z" fill="url(#user-fill3)" fill-rule="evenodd" /><path d="M422 285C422 235.847 461.623 196 510.5 196 559.377 196 599 235.847 599 285 599 334.153 559.377 374 510.5 374 461.623 374 422 334.153 422 285Z" fill="url(#user-fill4)" fill-rule="evenodd" /></g></svg>
 							<div style="margin-top: 5px;">
-								<p>瓶盖</p>
-								<p>tanjingyuan@Windows12.com</p>
+								<p>mcr130102</p>
+								<p>mcr130102@Windows12.com</p>
 							</div>
 						</a>
 					</div>
@@ -1964,7 +1951,7 @@ toggletheme() 切换主题
 		<div class="resize-bar"></div>
 		<div class="titbar">
 			<img src="icon/about.svg" class="icon">
-			<p>关于 Windows12 网页版</p>
+			<p>关于 Windows12 网页虚拟机</p>
 			<div>
 				<a class="a wbtg red" onclick="hidewin('about')"><i class="bi bi-x-lg"></i></a>
 				<a class="a wbtg max" onclick="maxwin('about')"><i class="bi bi-app"></i></a>
@@ -1985,10 +1972,10 @@ toggletheme() 切换主题
 				<h1 class="tit"><span></span>Windows 12 网页版</h1>
 				<div style="margin-left: 20px;">
 					<h2 class="tit"><span></span>简介</h2>
-					<p>&emsp;&emsp;Windows 12 网页版是一个开源项目，由星源(谭景元)原创，使用 HTML、CSS 和 JavaScript，在网络上模拟、创新操作系统。</p>
-					<p>&emsp;&emsp;此项目已发布至 GitHub，<a onclick="window.open('https://github.com/tjy-gitnub/win12','_blank');" win12_title="https://github.com/tjy-gitnub/win12" class="jump">点击此处查看</a>。</p>
-					<p>&emsp;&emsp;若您对于该项目有任何意见或建议，请在 GitHub 上<a onclick="window.open('https://github.com/tjy-gitnub/win12/issues','_blank');" win12_title="https://github.com/tjy-gitnub/win12/issues" class="jump">提交 issues</a>，您的问题会被尽可能快地解决。</p>
-					<p>&emsp;&emsp;原创作者星源，点击以<a onclick="window.open('https://tjy-gitnub.github.io/','_blank');" win12_title="https://tjy-gitnub.github.io/" class="jump">了解详细</a>。</p>
+					<p>&emsp;&emsp;Windows 12 网页版是一个开源项目，由星源(谭景元)原创，使用 HTML、CSS 和 JavaScript，在网络上模拟、创新操作系统。mcr130102改编了他</p>
+					<p>&emsp;&emsp;此项目已发布至 GitHub，<a onclick="window.open('https://kkgithub.com/tjy-gitnub/win12','_blank');" win12_title="https://kkgithub.com/mcr130102OIer/win12" class="jump">点击此处查看</a>。</p>
+					<p>&emsp;&emsp;若您对于该项目有任何意见或建议，请在 GitHub 上<a onclick="window.open('https://kkgithub.com/mcr130102OIer/win12/issues','_blank');" win12_title="https://kkgithub.com/mcr130102OIer/win12/issues" class="jump">提交 issues</a>，您的问题会被尽可能快地解决。</p>
+					<p>&emsp;&emsp;原作者星源，点击以<a onclick="window.open('https://tjy-gitnub.github.io/','_blank');" win12_title="https://tjy-gitnub.github.io/" class="jump">了解详细</a>。</p>
 					<h2 class="tit"><span></span>开源说明</h2>
 					<p>&emsp;&emsp;此项目是一个开源项目。此项目使用 EPL v2.0 开源许可。开源许可是具有法律效力的合同，请自觉遵守开源许可，尊重他人劳动。</p>
 					<p>&emsp;&emsp;根据许可，你可以对该项目进行传播、分发、修改以及二次发布，包括个人和商业用途。</p>
@@ -2011,7 +1998,7 @@ toggletheme() 切换主题
 						</loading>
 					</div>
 					<h2 class="tit"><span></span>Star</h2>
-					<p>&emsp;&emsp;感谢<a class="jump" win12_title="给个 Star 好不好？(即将跳转到：https://github.com/tjy-gitnub/win12/stargazers)" onclick="window.open('https://github.com/tjy-gitnub/win12/stargazers','_blank')">所有支持我们的人</a>。</p>
+					<p>&emsp;&emsp;感谢<a class="jump" win12_title="给个 Star 好不好？(即将跳转到：https://kkgithub.com/mcr130102OIer/win12/stargazers)" onclick="window.open('https://kkgithub.com/mcr130102OIer/win12/stargazers','_blank')">所有支持我们的人</a>。</p>
 					<div id="StarShow">
 						<loading>
 							<svg width="30px" height="30px" viewBox="0 0 16 16">
@@ -2030,137 +2017,10 @@ toggletheme() 切换主题
 			<div class="cnt update">
 				<h1 class="tit"><span></span>更新记录</h1>
 				<div style="margin-left: 20px;">
-					<details><summary><span>v7.4.2</span> AI Copilot 3.0！</summary><p>
-						&emsp;&emsp;-(更新来自@NB-Group)</p>
-						&emsp;&emsp;-笑死，昨天刚修好就又寄了，这次的船新版本绝对稳定，（理论上）再也不会寄</p>
+					<details><summary><span>v1.0.0</span>开始改编，正式运行！</summary><p>
+						&emsp;&emsp;-mcr130102开始改编，发布第一个版本</p>
+						&emsp;&emsp;-优化UI</p>
 					</details>
-					<details><summary><span>v7.4.1</span> AI Copilot 2.0！</summary><p>
-						&emsp;&emsp;-(更新来自@NB-Group)</p>
-						&emsp;&emsp;-修复了ai无法使用的问题</p>
-					</details>
-					<details><summary><span>v7.4.0</span> AI Copilot！</summary><p>
-						&emsp;&emsp;-(更新来自@NB-Group)</p>
-						&emsp;&emsp;-去掉一些奇怪的东西</p>
-						&emsp;&emsp;-经过我114年的开发，AI Copilot 2.0诞生了！</p>
-						&emsp;&emsp;-开源了AI后端的代码</p>
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details><summary><span>v7.3.7</span> 细节更改</summary><p>
-						&emsp;&emsp;-加入一些奇怪的东西</p>
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details><summary><span>v7.3.6</span> 语音识别球</summary><p>
-						&emsp;&emsp;(更新来自@NB-Group)<br/>
-						&emsp;&emsp;-增加语音识别球</p>
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details><summary><span>v7.3.5</span> 整顿代码</summary><p>
-						&emsp;&emsp;-整顿代码，贡献者必须按本文件开头以及CONTRIBUTING.md的规范编辑代码，否则不予合并，感谢理解<br/>
-						&emsp;&emsp;-重绘新增的一些图标<br>
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details><summary><span>v7.3.4</span> Edge更新</summary><p>
-						&emsp;&emsp;(更新来自@lh11117)<br>
-						&emsp;&emsp;-Edge 支持全屏<br/>
-						&emsp;&emsp;-Edge 支持收藏夹</p>
-					</details>
-					<details><summary><span>v7.3.3</span> 细节优化</summary><p>
-						&emsp;&emsp;细节优化</p>
-					</details>
-					<details><summary><span>v7.3.2</span> 细节更改</summary><p>
-						&emsp;&emsp;(更新来自 @tjy-gitnub )<br />
-						&emsp;&emsp;-新增了部分本地化语言功能<br />
-						&emsp;&emsp;-更新壁纸<br />
-						&emsp;&emsp;-优化样式<br />
-						&emsp;&emsp;-优化shutdown命令<br />
-						&emsp;&emsp;-其他更新与优化<br />
-						&emsp;&emsp;-修复了点击标签页无法切换焦点的问题<br />
-						&emsp;&emsp;-各位可以抽时间去看看README.md，一些特殊情况</p>
-					</details>
-					<details><summary><span>v7.3.1</span> Bug修复与细节优化</summary><p>
-						&emsp;&emsp;-删除changelog.md中重复的字(更新来自 @ZigaoWang )<br />
-						&emsp;&emsp;-修复BIOS无法正确访问的问题(更新来自 @ludonghengsb )</p>
-					</details>
-					<details><summary><span>v7.3.0</span> 桌面小组件、Dock自动隐藏、计算器完善和Windows 更新</summary><p>
-						&emsp;&emsp;(更新来自 @User782Tec )<br />
-						&emsp;&emsp;-新增了桌面小组件，可将小组件添加到桌面并调整位置<br />
-						&emsp;&emsp;-新增了编辑模式，可快捷编辑小组件的位置，并提供了相关的快捷入口<br />
-						&emsp;&emsp;-新增了窗口全屏且Dock不在使用时自动隐藏的功能<br />
-						&emsp;&emsp;-为Microsoft Edge浏览器和文件资源管理器新增了后退/前进的功能<br />
-						&emsp;&emsp;-又双叒叕优化计算器的精度问题与安全性问题<br />
-						&emsp;&emsp;-重写更新机制，并完善 Windows 更新<br />
-						&emsp;&emsp;-修复了文件资源管理器中右键文件失效的问题<br />
-						&emsp;&emsp;-修复了文件资源管理器中无法正确显示文件夹中文件的问题<br />
-						&emsp;&emsp;-更换了Python Editor的图标<br />
-						&emsp;&emsp;-完善了开源说明<br />
-						&emsp;&emsp;-其他细节与修复</p>
-					</details>
-					<details><summary><span>v7.2.1</span> README更新、“关于”应用显示实时Star数量、个性化设置支持保存</summary><p>
-						&emsp;&emsp;(更新来自 @lh11117 )<br />
-						&emsp;&emsp;-README更新<br />
-						&emsp;&emsp;-“关于”应用显示实时Star数量<br />
-						&emsp;&emsp;-个性化设置支持保存<br /></p>
-					</details>
-					<details><summary><span>v7.2.0</span> 优化运行、添加Windows12应用、添加WSA</summary><p>
-						&emsp;&emsp;(更新来自 @lh11117 )<br />
-						&emsp;&emsp;-优化运行<br />
-						&emsp;&emsp;-添加Windows12应用<br />
-						&emsp;&emsp;-添加WSA<br />
-						&emsp;&emsp;-添加shutdown命令<br />
-						&emsp;&emsp;-添加BIOS系统<br />
-						&emsp;&emsp;-支持桌面图标删除<br />
-						&emsp;&emsp;-更丰富的文件目录<br />
-						&emsp;&emsp;-任务管理器支持置顶<br /></p>
-					</details>
-					<details><summary><span>v7.1.0</span> 计算器进一步修复、离线页面的深色模式</summary><p>
-						&emsp;&emsp;(更新来自 @lh11117)<br />
-						&emsp;&emsp;-进一步修复了计算器精度缺陷和接受输入非法内容的问题<br />
-						&emsp;&emsp;-为Microsoft Edge浏览器的离线界面添加了深色模式版本<br />
-						&emsp;&emsp;-其他一些细节修复<br /></p>
-					</details>
-					<details><summary><span>v7.0.2</span> 计算器修复</summary><p>
-						&emsp;&emsp;(更新来自 @cong1223 和 @iewnfod)<br />
-						&emsp;&emsp;-修复计算器计算加减乘除、平方、平方根等运算的精度问题(来自 @cong1223)<br />
-						&emsp;&emsp;-只允许calc-input输入数字(来自 @iewnfod)<br /></p>
-					</details>
-					<details><summary><span>v7.0.1</span> 资源管理器标签页、离线界面与新闻</summary><p>
-						&emsp;&emsp;-文件资源管理器的标签页(来自 @tjy-gitnub)<br />
-						&emsp;&emsp;-新增了Microsoft Edge浏览器的离线界面(来自 @User782Tec)<br />
-						&emsp;&emsp;-新增新闻(来自 @Nick-DL)<br />
-						&emsp;&emsp;-优化部分UI<br />
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details><summary><span>v7.0.0</span> AI助手,新增多个应用与功能</summary><p>
-						&emsp;&emsp;-Windows 12 AI Copilot(@NB-Group提供api, @tjy-gitnub魔改)<br />
-						&emsp;&emsp;-任务管理器(由 @User782Tec 提供)<br />
-						&emsp;&emsp;-安全中心(由 @NB-Group 提供)<br />
-						&emsp;&emsp;-适配文件系统(由 @NB-Group 提供)(别问我为啥现在才出，要问问@NB-Group)<br />
-						&emsp;&emsp;-窗口云母(Mica)效果(由 @tjy-gitnub 提供，在设置中启用)<br />
-						&emsp;&emsp;-文件资源管理器导航栏(由 @User782Tec 提供)<br />
-						&emsp;&emsp;-任务管理器小组件(由 @User782Tec 提供)<br />
-						&emsp;&emsp;-全新壁纸(由 @tjy-gitnub 提供)<br />
-						&emsp;&emsp;-新增新闻(来自 @for-the-zero)<br />
-						&emsp;&emsp;-修复了终端的灾难性bug<br />
-						&emsp;&emsp;-优化部分UI<br />
-						&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<details>
-						<summary><span>v6.0.0</span> 文件系统,窗口大小,天气小组件,任务栏小组件</summary>
-						<p>
-							&emsp;&emsp;-新增文件系统(由 @NB-Group 之后提供)<br />
-							&emsp;&emsp;-窗口大小调整功能(由 @User782Tec 提供)<br />
-							&emsp;&emsp;-保存桌面布局(由 @User782Tec 提供)<br />
-							&emsp;&emsp;-天气小组件(由 @tjy-gitnub 提供)<br />
-							&emsp;&emsp;-小组件添加到任务栏(由 @tjy-gitnub 提供,目前仅支持天气小组件)<br />
-							&emsp;&emsp;-引入全新提示框(由 @tjy-gitnub 提供)<br />
-							&emsp;&emsp;-新的反馈通道<br />
-							&emsp;&emsp;-修复了有时开机动画不能正确显示的问题<br />
-							&emsp;&emsp;-修复了登录界面不显示的问题<br />
-							&emsp;&emsp;-适配新的主题格式，加速预览图显示<br />
-							&emsp;&emsp;-细节优化和修复</p>
-					</details>
-					<!-- 全部列出来那这个更多意义何在？ -->
-					<a onclick="window.open('changelog.md','_blank');" win12_title="changelog.md" class="a jump" style="text-align: center;">更多</a>
 				</div>
 			</div>
 		</div>
@@ -2544,7 +2404,7 @@ toggletheme() 切换主题
 		<div class="content" id="win-camera-notice" style="padding: 0px 10px 0px 10px;">
 			<div style="display: flex; width: 100%; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 				<div
-					style="width: 50px; height: 50px; background-image: url('icon/camera.svg'); background-repeat: no-repeat;">
+					style="width: 50px; height: 50px; background-image: url('/mcr130102OIer/win12/edit/main/icon/camera.svg'); background-repeat: no-repeat;">
 				</div>
 			</div>
 			<p>
@@ -3134,7 +2994,8 @@ toggletheme() 切换主题
 	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-error_marker.min.js"></script>
 	<script src='https://cdn.staticfile.org/big.js/6.2.1/big.min.js'></script>
 	<script src="./scripts/calculator_kernel.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
+	<script src='https://kkgithub.com/extdomains/cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
 </body>
 
 </html>
+
